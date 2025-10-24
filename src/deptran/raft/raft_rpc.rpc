@@ -1,0 +1,9 @@
+namespace janus;
+
+abstract service Raft {
+    defer RequestVote(uint64_t term, uint64_t candidateId, uint64_t lastLogIndex, uint64_t lastLogTerm | uint64_t retTerm, bool_t voteGranted);
+
+    defer AppendEntries(uint64_t term, uint64_t leaderId, uint64_t prevLogIndex, uint64_t prevLogTerm, uint64_t entryIndex, uint64_t entryTerm, MarshallDeputy entry, uint64_t leaderCommit | uint64_t retTerm, bool_t success);
+
+    defer HelloRpc(string req | string res);
+}
