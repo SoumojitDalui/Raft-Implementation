@@ -1,29 +1,28 @@
+# Raft Consensus Algorithm Implementation (C++)
 
-#  Distributed Systems Labs in C++
+A robust C++ implementation of the Raft distributed consensus algorithm, designed to manage replicated logs and ensure strong consistency across a distributed cluster.
 
-MIT 6.824 style distributed systems lab rebuilt in C++.
-It includes a series of labs in which you will build a transactional, sharded, fault-tolerant key/value storage system (like Google Spanner, MongoDB, etc). 
+## Key Implemented Features
 
-## Lab assignments
+- **Core Consensus Module**: Implemented the fundamental replicated state machine logic, establishing a reliable foundation for distributed coordination.
+- **Leader Election**: Implemented randomized election timeouts to minimize split votes and ensure stable leadership transitions.
+- **Log Replication**: Developed the core logic for replicating log entries across the cluster to strictly enforce strong consistency.
+- **Heartbeat Mechanism**: Engineered periodic heartbeat signals to maintain leader authority and efficiently detect follower failures.
+- **State Machine Safety**: Connected the consensus module to a state machine to ensure commands are executed in a deterministic order across all replicas.
 
-- Lab 1 - Replicated State Machine 
-- Lab 2 - Fault-tolerant Key-value Store
-- Lab 3 - Sharded Key-value Store
-- Lab 4 - Distributed Transactions
+## Development Environment
 
-## Lab environment
+A modern linux environment (e.g., Ubuntu 22.04) is recommended for building the project and running the reproduction testing scripts.
 
-A modern linux environment (e.g., Ubuntu 22.04) is recommended for the labs. If you do not have access to this, consider using a virtual machine. 
+## Build Instructions
 
-## Getting started (Ubuntu 22.04)
-
-Get source code:
-```
+### Get source code
+```bash
 git clone --recursive [repo_address]
 ```
 
-Install dependencies:
-```
+### Install dependencies
+```bash
 sudo apt-get update
 sudo apt-get install -y \
     git \
@@ -43,9 +42,5 @@ sudo apt-get install -y \
 sudo pip3 install -r requirements.txt
 ```
 
-For next steps, checkout the guidelines in the [course web page](http://mpaxos.com/teaching/ds/22fa/labs.html).
-
-## Author and acknowledgements
-Author: Shuai Mu, Julie Lee (lab 1)
-
-Many of the lab structure and the guideline text are taken from MIT 6.824. The code is based on the acedemic prototypes of previous research works including Rococo/Janus/Snow/DRP/Rolis/DepFast.
+## References
+Implementation architecture based on the Raft consensus protocol and MIT 6.824 distributed systems design patterns.
